@@ -1,0 +1,23 @@
+{
+  "idSeguro": 8,
+  "nif": "753699968",
+  "nombre": "Lida",
+  "ape1": "Miranda",
+  "edad": 36,
+  "sexo": "M",
+  "casado": false,
+  "numHijos": 2,
+  "embarazada": false,
+  "coberturas": {
+    "oftalmologia": true,
+    "dental": true,
+    "fecundacionInVitro": false
+  },
+  "enfermedades": {
+    "corazon": true,
+    "estomacal": true,
+    "rinyones": true,
+    "alergia": true,
+    "nombreAlergia": ""
+  }
+}

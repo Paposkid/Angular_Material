@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Angular Material CSS using GitCDN to load directly from 'bower-material/master' -->
+		<link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+		<link rel="stylesheet" href="../../resources/estilos.css">
+
+		<!-- Angular Material Dependencies -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
+
+		<!-- Angular Material Javascript using GitCDN to load directly from 'bower-material/master' -->
+		<script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+
+		
+		<script src="../../js/seguroMedico_V2.js"></script>
+	</head>
+
+
+	<body ng-controller="MainController">
+		<header>
+			<ng-include src="'../layout/cabecera.html'"></ng-include>
+		</header>
+
+		<nav>
+			<ng-include src="'../layout/menu.html'"></ng-include>
+		</nav>
+
+		<section id="contenido">
+
+				<div ng-view></div>
+
+		</section>
+		
+		<footer>
+			<ng-include src="'../layout/pie.html'"></ng-include>
+		</footer>
+
+	</body>
+
+</html>

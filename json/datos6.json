@@ -1,0 +1,23 @@
+{
+  "idSeguro": 6,
+  "nif": "75632541B",
+  "nombre": "Brenda",
+  "ape1": "Pedroza",
+  "edad": 32,
+  "sexo": "M",
+  "casado": true,
+  "numHijos": 1,
+  "embarazada": false,
+  "coberturas": {
+    "oftalmologia": true,
+    "dental": true,
+    "fecundacionInVitro": false
+  },
+  "enfermedades": {
+    "corazon": false,
+    "estomacal": true,
+    "rinyones": true,
+    "alergia": false,
+    "nombreAlergia": ""
+  }
+}
