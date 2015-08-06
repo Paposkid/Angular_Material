@@ -1,0 +1,18 @@
+
+<!-- Se escribe el nombre del controlador directamente, porque no va a ser navegable dentro de la aplicacion-->
+<div ng-controller="MenuIzquierdaController as menuIzqCtrl">
+
+	<!-- md-is-locked-open="$mdMedia('gt-md')"v indica que si el tamaño de la pantalla es grande, se quede fijo -->
+	<md-sidenav md-component-id="menuLeftId" md-is-locked-open="$mdMedia('gt-md')">
+		  <!-- corresponde a un Div Con scroll -->
+	      <md-content layout-padding>
+
+				PRUEBA DEL MENU 
+
+	      </md-content>
+	</md-sidenav>
+
+	<!-- boton redondo, ubicado a la izquierda y arriba-->
+	<md-button class="md-primary md-fab md-fab-top-left" hide-gt-md ng-click="menuIzqCtrl.toggle()">Prueba Boton</md-button>
+
+</div>
