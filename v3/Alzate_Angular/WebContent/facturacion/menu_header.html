@@ -1,0 +1,33 @@
+
+<div ng-controller="MenuHeaderController">
+  
+    <md-toolbar>
+    <!-- layout-align atibuto propio de angularMaterial, que distribuye los divs de manera uniforme en el encabezado -->
+      <div class="md-toolbar-tools" layout="row" layout-align="space-between start">
+		  <!-- hide-sm esta propiedad indica que cuando la pantalla del dispositivo sea pequeña, no se muestre este div -->
+		  <div hide-sm>
+		  	<md-button class="md-icon-button">
+	          <h5>Logo Aplicacion</h5>
+	        </md-button>
+		  </div>
+
+		  <div>
+	        <md-button class="md-icon-button">
+	          <h2><b>Titulo de la Aplicación</b></h2>
+	        </md-button>
+		  </div>
+
+		  <div>
+	        <md-button class="md-icon-button">
+	          <h6>Home</h6>
+	        </md-button>
+
+	        <md-button class="md-icon-button">
+	          <h6>Cerrar Session</h6>
+	        </md-button>
+
+		  </div>
+      </div>
+    </md-toolbar>
+  
+</div>
