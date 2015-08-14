@@ -1,116 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="appPrueba">
 
   <head>
     <meta charset="UTF-8">
-
-    <!-- Angular Material CSS using GitCDN to load directly from 'bower-material/master' -->
-    <link rel="stylesheet" href="../../resources/estilos.css">
-    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
-
-    <!-- Angular Material Dependencies -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
-
-    <!-- Angular Material Javascript using GitCDN to load directly from 'bower-material/master' -->
-    <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js"></script>
-
-    
-    <!-- <script src="../../js/seguroMedico_V2.js"></script> -->
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
   </head>
 
 
-  <body>
+  <body ng-controller="PruebaController">
+    <h1>Pagina Inicial</h1>
 
-    <div layout="column" ng-controller="DemoCtrlController">
+    <md-button class="md-raised">Prueba</md-button>
+    <md-button class="md-primary">Click me</md-button>
+    <md-button class="md-accent">or maybe me</md-button>
+    <md-button class="md-warn">Careful</md-button>
 
-      <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-        <md-input-container>
-          <label>Title</label>
-          <input ng-model="user.title">
-        </md-input-container>
-        <md-input-container>
-          <label>Email</label>
-          <input ng-model="user.email" type="email">
-        </md-input-container>
+    <br><br>
+    <md-button class="md-primary">Click me</md-button>
+    <md-button class="md-primary md-hue-1">Click me</md-button>
+    <md-button class="md-primary md-hue-2">Click me</md-button>
+<br><br>
+
+  <h1>Botones</h1>
+
+
+    <md-content>
+
+        <section layout="row" layout-sm="column" layout-align="center center">
+          <md-button class="md-raised">Button</md-button>
+          <md-button class="md-raised md-primary">Primary</md-button>
+          <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+          <md-button class="md-raised md-warn">Warn</md-button>
+          <div class="label">Raised</div>
+        </section>
+
+        <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button class="md-fab" aria-label="Eat cake">
+                <md-icon md-svg-src="../../img/cake.svg"></md-icon>
+            </md-button>
+
+            <md-button class="md-fab md-primary" aria-label="Use Android">
+              <md-icon md-svg-src="../../img/android.svg"></md-icon>
+            </md-button>
+
+            <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+                <md-icon md-svg-src="../../img/ic_comment_24px.svg"></md-icon>
+            </md-button>
+
+            <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+                <md-icon md-svg-src="../../img/ic_people_24px.svg"></md-icon>
+            </md-button>
+
+            <md-button class="md-fab md-mini" aria-label="Eat cake">
+                <md-icon md-svg-src="../../img/cake.svg"></md-icon>
+            </md-button>
+
+            <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
+              <md-icon md-svg-src="../../img/android.svg" style="color: greenyellow;"></md-icon>
+            </md-button>
+
+          <div class="label">FAB</div>
+        </section>
+
       </md-content>
 
-      <md-content layout-padding>
-        <form name="userForm">
+<br><br>
 
+  <h1>Basic Usage</h1>
 
-          <div layout layout-sm="column">
+  <md-content class="md-padding">
+    <p class="inset">
+      Open a dialog over the app's content. Press escape or click outside to close the dialog and
+      send focus back to the triggering button.
+    </p>
 
-              <md-input-container style="width:80%">
-                <label>Company (Disabled)</label>
-                <input ng-model="user.company" disabled>
-              </md-input-container>
+    <div class="dialog-demo-content" layout="row" layout-wrap>
 
-            <md-input-container flex>
-              <label>Submission Date</label>
-              <input type="date" ng-model="user.submissionDate">
-            </md-input-container>
+      <md-button class="md-primary md-raised" ng-click="showAlert($event)" flex flex-md="100">
+        Alert Dialog
+      </md-button>
 
-          </div>
-
-
-          <div layout layout-sm="column">
-
-            <md-input-container flex>
-              <label>First name</label>
-              <input ng-model="user.firstName">
-            </md-input-container>
-
-            <md-input-container flex>
-              <label>Last Name</label>
-              <input ng-model="theMax">
-            </md-input-container>
-
-          </div>
-
-
-          <md-input-container flex>
-            <label>Address</label>
-            <input ng-model="user.address">
-          </md-input-container>
-
-          <md-input-container md-no-float>
-            <input ng-model="user.address2" placeholder="Address 2">
-          </md-input-container>
-
-          <div layout layout-sm="column">
-
-            <md-input-container flex>
-              <label>City</label>
-              <input ng-model="user.city">
-            </md-input-container>
-
-            <md-input-container flex>
-              <label>State</label>
-              <input ng-model="user.state">
-            </md-input-container>
-
-            <md-input-container flex>
-              <label>Postal Code</label>
-              <input ng-model="user.postalCode">
-            </md-input-container>
-
-          </div>
-
-
-          <md-input-container flex>
-            <label>Biography</label>
-            <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
-          </md-input-container>
-
-        </form>
-      </md-content>
+      <md-button class="md-primary md-raised" ng-click="showConfirm($event)" flex flex-md="100">
+        Confirm Dialog
+      </md-button>
 
     </div>
+
+    <div ng-if="alert">
+      <br/>
+      <b layout="row" layout-align="center center" class="md-padding">
+        {{alert}}
+      </b>
+    </div>
+
+  </md-content>
+
+
+
+  <br><br>
+  <h1>Menu Desplegable</h1>
+
+  <md-content class="md-padding">
+    <p>
+      You can use the fabToolbar with a trigger and regular toolbar.
+    </p>
+    <p>
+      You may use the <code>md-open</code> attribute to programmatically
+      control whether or not the control is open, and you may add a class
+      of <code>md-left</code> or <code>md-right</code> to control the
+      position of the trigger and toolbar tools.
+    </p>
+  </md-content>
+
+  <md-fab-toolbar md-open="demo.isOpen" count="demo.count" ng-class="demo.selectedAlignment">
+    <md-fab-trigger class="align-with-text">
+      <md-button aria-label="menu" class="md-fab md-primary">
+        <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-toolbar>
+      <md-fab-actions class="md-toolbar-tools">
+        <md-button aria-label="comment" class="md-icon-button">
+          <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
+        </md-button>
+        <md-button aria-label="label" class="md-icon-button">
+          <md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
+        </md-button>
+        <md-button aria-label="photo" class="md-icon-button">
+          <md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-toolbar>
+  </md-fab-toolbar>
+  
+  <md-content class="md-padding" layout="column">
+    <div layout="row" layout-align="space-around">
+      <div layout="column">
+        <b>Open/Closed</b>
+        <md-radio-group ng-model="demo.isOpen">
+          <md-radio-button ng-value="true">Open</md-radio-button>
+          <md-radio-button ng-value="false">Closed</md-radio-button>
+        </md-radio-group>
+      </div>
+      <div layout="column">
+        <b>Alignment</b>
+        <md-radio-group ng-model="demo.selectedAlignment">
+          <md-radio-button ng-value="'md-left'">Left</md-radio-button>
+          <md-radio-button ng-value="'md-right'">Right</md-radio-button>
+        </md-radio-group>
+      </div>
+    </div>
+  </md-content>
+
+
+  <br><br>
+  <h1>BootsTrap</h1>
+
+<div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+</div>
+
+  <br><br>
+  <h1>Tablas</h1>
+  <br><br>
+
+<div class="container">
+
+  <table id="example" class="table">
+      <thead>
+          <tr class="info">
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th>Age</th>
+              <th>Start date</th>
+              <th>Salary</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr class="active">
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td>$320,800</td>
+          </tr>
+          <tr class="danger">
+              <td>Garrett Winters</td>
+              <td>Accountant</td>
+              <td>Tokyo</td>
+              <td>63</td>
+              <td>2011/07/25</td>
+              <td>$170,750</td>
+          </tr>
+          <tr class="active">
+              <td>Ashton Cox</td>
+              <td>Junior Technical Author</td>
+              <td>San Francisco</td>
+              <td>66</td>
+              <td>2009/01/12</td>
+              <td>$86,000</td>
+          </tr>
+          <tr class="danger">
+              <td>Cedric Kelly</td>
+              <td>Senior Javascript Developer</td>
+              <td>Edinburgh</td>
+              <td>22</td>
+              <td>2012/03/29</td>
+              <td>$433,060</td>
+          </tr>
+          <tr class="active">
+              <td>Airi Satou</td>
+              <td>Accountant</td>
+              <td>Tokyo</td>
+              <td>33</td>
+              <td>2008/11/28</td>
+              <td>$162,700</td>
+          </tr>
+          <tr class="danger">
+              <td>Brielle Williamson</td>
+              <td>Integration Specialist</td>
+              <td>New York</td>
+              <td>61</td>
+              <td>2012/12/02</td>
+              <td>$372,000</td>
+          </tr>
+       </tbody>
+   </table>
+</div>
+
+
+    <script src="../../libs/jQuery/jquery-2.1.4.js"></script>
+    <script src="../../libs/angular/angular.min.js"></script>
+    <script src="../../libs/bootstrap/bootstrap.min.js"></script>
+    <script src="../../libs/angular/angular-aria.min.js"></script>
+    <script src="../../libs/angular/angular-animate.min.js"></script>
+    <script src="../../libs/angular/angular-messages.min.js"></script>
+    <script src="../../libs/angular-material/angular-material.min.js"></script>
+    <script src="script.js"></script>
 
   </body>
 
