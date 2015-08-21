@@ -10,12 +10,12 @@ import static org.eclipse.persistence.annotations.MultitenantType.TABLE_PER_TENA
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -29,22 +29,20 @@ import org.eclipse.persistence.annotations.Multitenant;
 import org.eclipse.persistence.annotations.TenantTableDiscriminator;
 import org.eclipse.persistence.annotations.TenantTableDiscriminatorType;
 
-/**
- *
- * @author jialzate
- */
+
 @Entity
-@Table(name = "\"Persona\"")
+@Table(name = "\"tbl_persona\"")
 @XmlRootElement
 @Multitenant(TABLE_PER_TENANT)
 @TenantTableDiscriminator(contextProperty = "eclipselink.tenant-id", type = TenantTableDiscriminatorType.SCHEMA)
 public class PersonaEntity implements EntidadBaseEntity, Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@Basic(optional = false)
-	@Column(name = "\"cdPersona\"")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name="TBL_PERSONA_CODIGO_GENERATOR", sequenceName="SEQ_TBL_PERSONA")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TBL_PERSONA_CODIGO_GENERATOR")
+	@Column(name = "\"cdPersona\"", unique=true, nullable=false)
 	private Long cdPersona;
 	@Column(name = "\"feProceso\"", updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)

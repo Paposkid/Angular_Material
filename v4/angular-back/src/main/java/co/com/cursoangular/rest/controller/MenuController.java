@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import co.com.cursoangular.rest.entities.MenuRest;
 
 @Controller
-@RequestMapping("/rest/menu")
+@RequestMapping("menu")
 public class MenuController {
 	static final Logger logger = LogManager.getLogger(MenuController.class);
 

@@ -3,8 +3,6 @@ package co.com.cursoangular.rest.controller;
 import java.util.Arrays;
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +24,10 @@ import co.com.cursoangular.rest.entities.FacturaRest;
 import co.com.cursoangular.rest.entities.TipoRest;
 
 @Controller
-@RequestMapping("/rest/factura")
+@RequestMapping("factura")
 public class FacturaController {
 	static final Logger logger = LogManager.getLogger(FacturaController.class);
 
-	private @Autowired HttpServletRequest request;
 
 	@Autowired
 	private FacturaBusiness facturaBusiness;

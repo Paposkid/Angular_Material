@@ -21,7 +21,7 @@ import co.com.cursoangular.rest.entities.PersonaRest;
 import co.com.cursoangular.rest.entities.TipoRest;
 
 @Controller
-@RequestMapping("/rest/tercero")
+@RequestMapping("tercero")
 public class TerceroController {
 	static final Logger logger = LogManager.getLogger(TerceroController.class);
 

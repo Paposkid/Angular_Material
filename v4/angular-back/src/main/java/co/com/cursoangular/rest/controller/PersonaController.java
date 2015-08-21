@@ -23,7 +23,7 @@ import co.com.cursoangular.rest.entities.PersonaRest;
 import co.com.cursoangular.util.rest.RestUtil;
 
 @Controller
-@RequestMapping("/rest/persona")
+@RequestMapping("persona")
 public class PersonaController {
 	
 	static final Logger logger = LogManager.getLogger(PersonaController.class);

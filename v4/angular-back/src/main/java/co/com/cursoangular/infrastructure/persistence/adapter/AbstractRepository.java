@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public abstract class AbstractRepository<T> {
 		return request.getRemoteUser();
 	}
 
-	//@PersistenceContext(unitName = "unidades-ejbPU")
+	@PersistenceContext(unitName = "cursoAngular-ejbPU")
 	private EntityManager em;
 
 	
