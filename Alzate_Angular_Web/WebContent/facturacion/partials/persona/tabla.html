@@ -1,0 +1,21 @@
+
+<table class="table" width="100%">
+	<thead>
+		<tr>
+			<th>Tipo Documento</th>
+			<th>Numero Documento</th>
+			<th>Nombres</th>
+			<th>Apellidos</th>
+			<th>Celular</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="rowPersona in listaPersonas" ng-click="seleccionarRegistro(rowPersona)">
+			<td>{{rowPersona.strTipoDocumento}}</td>
+			<td>{{rowPersona.nmDocumento | number}}</td>
+			<td>{{rowPersona.strNombres}}</td>
+			<td>{{rowPersona.strApellidos}}</td>
+			<td>{{rowPersona.strCelular}}</td>
+		</tr>
+	</tbody>
+</table>

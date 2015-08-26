@@ -1,0 +1,57 @@
+<div ng-controller="PersonaController" layout-padding>
+	
+	<form name="frmPersona" novalidate>
+		
+		<div layout="row" layout-wrap layout-padding>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Tipo Documento</label>
+				<input name="tipoDocumento" ng-model="persona.strTipoDocumento" required>
+				 <div ng-messages="frmPersona.tipoDocumento.$error" ng-if="frmPersona.tipoDocumento.$dirty">
+			        <p ng-message="required">Campo es Requerido</p>
+			    </div>
+
+			</div>
+			
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Numero Documento</label>
+				<input ng-model="persona.nmDocumento">
+			</div>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Nombres</label>
+				<input ng-model="persona.strNombres">
+			</div>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Apellidos</label>
+				<input ng-model="persona.strApellidos">
+			</div>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Celular</label>
+				<input ng-model="persona.strCelular">
+			</div>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Telefono</label>
+				<input ng-model="persona.strTelefono1">
+			</div>
+
+		</div>
+
+	</form>
+
+	<md-toolbar>
+		<div class="md-toolbar-tools" layout-sm="column" layout-align="center center" layout-wrap>
+			<md-button class="md-raised" ng-click="guardarPersona()">Guardar</md-button>
+      		<md-button class="md-raised">Cancelar</md-button>
+		</div>
+	</md-toolbar>
+
+
+	<div ng-include="'facturacion/partials/persona/tabla.html'">
+		
+	</div>
+
+</div>
