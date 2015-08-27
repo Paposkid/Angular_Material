@@ -40,7 +40,8 @@ public class PersonaEntity implements EntidadBaseEntity, Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(name="TBL_PERSONA_CODIGO_GENERATOR",sequenceName = "SEQ_TBL_PERSONA",allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="TBL_PERSONA_CODIGO_GENERATOR")
 	@Column(name = "cdPersona", unique=true, nullable=false)
 	private Long cdPersona;
 	@Column(name = "feProceso", updatable = false)

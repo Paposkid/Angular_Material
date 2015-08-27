@@ -10,8 +10,9 @@ var factories = angular.module('facturacion.factories', []);
 /* se setearan todas las constantes globales que se va a utilizar, las cuales internamente tienen un JSON,
  El nombre es: "CONSTANTES_GLOBALES" */
  facturacionApp.constant("CONSTANTES_GLOBALES", {
- 	HOST_REST: "http://192.168.0.14:8089/angular-back/rest/",
- 	REST_PERSONAS: "http://192.168.0.14:8089/angular-back/rest/persona/"
+ 	HOST_REST: "http://localhost:8089/Alzate_Angular_Back/rest/",
+ 	REST_PERSONAS: "http://localhost:8089/Alzate_Angular_Back/rest/persona/",
+ 	REST_CIUDAD: "http://localhost:8089/Alzate_Angular_Back/rest/ciudad/"
 
  });
 
@@ -42,14 +43,19 @@ function config($mdThemingProvider, $routeProvider) {
 		controller: 'HomeController'
 	});
 
-	// Se configura la ruta para el Home
+	// Se configura la ruta para la opcion Persona
 	$routeProvider.when('/persona', {
 		templateUrl: 'facturacion/partials/persona/persona.html'
 	});
 
-	// Se configura la ruta para el Home
+	// Se configura la ruta para la opcion Factura
 	$routeProvider.when('/factura', {
 		templateUrl: 'facturacion/partials/factura/factura.html'
+	});
+
+	// Se configura la ruta para la opcion Ciudad
+	$routeProvider.when('/ciudad', {
+		templateUrl: 'facturacion/partials/ciudad/ciudad.html'
 	});
 
 

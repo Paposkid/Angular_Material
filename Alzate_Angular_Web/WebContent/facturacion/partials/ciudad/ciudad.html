@@ -1,0 +1,30 @@
+<div ng-controller="CiudadController" layout-padding>
+	
+	<form name="frmCiudad" novalidate>
+		
+		<div layout="row" layout-wrap layout-padding>
+
+			<div flex="20" flex-sm="100" flex-md="50" layout="column">
+				<label>Nombre Ciudad</label>
+				<input name="nombreCiudad" ng-model="ciudad.nombre" required>
+				 <div ng-messages="frmCiudad.nombreCiudad.$error" ng-if="frmCiudad.nombreCiudad.$dirty">
+			        <p ng-message="required">Este Campo es Requerido</p>
+			    </div>
+			</div>
+		</div>
+
+	</form>
+
+	<md-toolbar>
+		<div class="md-toolbar-tools" layout-sm="column" layout-align="center center" layout-wrap>
+			<md-button class="md-raised" ng-click="guardarCiudad()">Guardar</md-button>
+      		<md-button class="md-raised">Cancelar</md-button>
+		</div>
+	</md-toolbar>
+
+
+	<div ng-include="'facturacion/partials/ciudad/tabla.html'">
+		
+	</div>
+
+</div>

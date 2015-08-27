@@ -1,0 +1,15 @@
+
+<table class="table" width="80%">
+	<thead>
+		<tr>
+			<th>Código Ciudad</th>
+			<th>Nombre Ciudad</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="rowCiudad in listaCiudades" ng-click="editarCiudad(rowCiudad)">
+			<td>{{rowCiudad.codigo}}</td>
+			<td>{{rowCiudad.nombre}}</td>
+		</tr>
+	</tbody>
+</table>

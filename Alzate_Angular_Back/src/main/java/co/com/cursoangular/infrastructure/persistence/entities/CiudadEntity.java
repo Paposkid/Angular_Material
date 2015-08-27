@@ -23,15 +23,13 @@ import org.eclipse.persistence.annotations.TenantTableDiscriminatorType;
 @Entity
 @Table(name="\"tbl_ciudad\"")
 @XmlRootElement
-@TenantTableDiscriminator(contextProperty = "eclipselink.tenant-id", type = TenantTableDiscriminatorType.SCHEMA)
-@NamedQuery(name="CiudadEntity.findAll", query="SELECT c FROM CiudadEntity c")
 public class CiudadEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="TBL_CIUDAD_CODIGO_GENERATOR", sequenceName="SEQ_TBL_CIUDAD")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TBL_CIUDAD_CODIGO_GENERATOR")
+	@SequenceGenerator(name="TBL_CIUDAD_CODIGO_GENERATOR",sequenceName = "SEQ_TBL_CIUDAD",allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="TBL_CIUDAD_CODIGO_GENERATOR")
 	@Column(name = "\"codigo\"", unique=true, nullable=false)
 	private Integer codigo;
 
