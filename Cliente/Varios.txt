@@ -1,0 +1,21 @@
+
+app.js
+
+ facturacionApp.constant("CONSTANTES_GLOBALES", {
+ 	HOST_REST: "http://localhost:8989/Alzate_Angular_Back/rest/",
+ 	DELETE_MESSAGE: "Está seguro de eliminar el registro ?",
+ 	REST_CLIENTE: "cliente/"
+
+ });
+ 
+ 
+ ******************************
+ 
+ 	// Se configura la ruta para la opcion Clientes
+	$routeProvider.when('/cliente', {
+		templateUrl: 'facturacion/partials/cliente/cliente.html'
+	});
+	
+****************************** Menu Izquieda
+
+			<md-button href="#cliente">Gestionar Clientes</md-button>

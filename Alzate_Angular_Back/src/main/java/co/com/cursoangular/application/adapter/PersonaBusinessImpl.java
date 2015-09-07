@@ -21,7 +21,7 @@ public class PersonaBusinessImpl implements PersonaBusiness {
 	PersonaRepository personaRepository;
 
 	@Override
-	public Persona find(Long id) {
+	public Persona find(Integer id) {
 
 		return PersonaAdapter.toCore(personaRepository.find(id));
 	}

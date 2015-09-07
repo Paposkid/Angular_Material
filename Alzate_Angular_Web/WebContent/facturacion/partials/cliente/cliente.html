@@ -1,0 +1,97 @@
+<div ng-controller="ClienteController" layout-padding>
+	
+	<form name="frmCliente" novalidate>
+		
+		<div layout="row" layout-wrap layout-padding>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Tipo Documento:</label>
+				<select name="tipoDocumento" ng-model="cliente.tipoDcto"  required>
+					<option value="">--Elige una Opción--</option>
+					<option value="CC">Cedula de Ciudadanía</option>
+					<option value="TI">Tarjeta de Identidad</option>
+				</select>
+			    <div class="error" ng-messages="frmCliente.tipoDocumento.$error" ng-if="frmCliente.tipoDocumento.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Nro. Documento:</label>
+				<input type="text" name="nroDocumento" ng-model="cliente.nroDcto" mg-maxlength="12" required ng-invalid>
+			    <div class="error" ng-messages="frmCliente.nroDocumento.$error" ng-if="frmCliente.nroDocumento.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			        <div ng-message="mg-maxlength">Longitud máxima 12</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Nombre:</label>
+				<input name="nombreCliente" ng-model="cliente.nombre" nd-maxlength="30"  required>
+			    <div class="error" ng-messages="frmCliente.nombreCliente.$error" ng-if="frmCliente.nombreCliente.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			        <div ng-message="mg-maxlength">Longitud máxima 12</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Apellido:</label>
+				<input name="apellidoCliente" ng-model="cliente.apellido" ng-maxlength="30" required>
+			    <div class="error" ng-messages="frmCliente.apellidoCliente.$error" ng-if="frmCliente.apellidoCliente.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			        <div ng-message="mg-maxlength">Longitud máxima 30</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Dirección:</label>
+				<input name="direccionCliente" ng-model="cliente.direccion" ng-maxlength="50" required>
+			    <div class="error" ng-messages="frmCliente.direccionCliente.$error" ng-if="frmCliente.direccionCliente.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			        <div ng-message="mg-maxlength">Longitud máxima 50</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Teléfono:</label>
+				<input type="text" name="telefonoCliente" ng-model="cliente.telefono" ng-maxlength="7">
+			    <div class="error" ng-messages="frmCliente.telefonoCliente.$error" ng-if="frmCliente.telefonoCliente.$dirty">
+			        <div ng-message="mg-maxlength">Longitud máxima 7</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>Celular:</label>
+				<input type="text" name="celularCliente" ng-model="cliente.celular" ng-maxlength="10" required>
+			    <div class="error" ng-messages="frmCliente.celularCliente.$error" ng-if="frmCliente.celularCliente.$dirty">
+			    	<div ng-message="required">Campo requerido</div>
+			        <div ng-message="mg-maxlength">Longitud máxima 10</div>
+			    </div>
+			</div>
+
+			<div flex="25" flex-sm="100" flex-md="50" layout="column">
+				<label>E-mail:</label>
+				<input type="email" name="email" ng-model="cliente.email" required>
+			    <div ng-show="frmCliente.$submitted || frmCliente.email.$touched">
+			      <span ng-show="frmCliente.email.$error.required && frmCliente.email.$dirty">Campo requerido</span>
+			      <span ng-show="frmCliente.email.$error.email">E-mail No válido</span>
+			    </div>
+			</div>			
+
+		</div>
+
+	</form>
+
+	<md-toolbar>
+		<div class="md-toolbar-tools" layout-sm="column" layout-align="center center" layout-wrap>
+			<md-button class="md-raised" ng-click="guardarCliente()">Guardar</md-button>
+      		<md-button class="md-raised" ng-click="limpiar()">Cancelar</md-button>
+		</div>
+	</md-toolbar>
+
+
+	<div ng-include="'facturacion/partials/cliente/tabla.html'">
+		
+	</div>
+
+</div>

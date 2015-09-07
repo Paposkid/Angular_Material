@@ -1,0 +1,39 @@
+<table class="table table-striped table-bordered table-hover" width="80%">
+	<thead>
+		<tr>
+			<th></th>
+			<th>tipo Dcto</th>
+			<th>Nro. Dcto</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Dirección</th>
+			<th>Teléfono</th>
+			<th>Celular</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="rowCliente in listaClientes" ng-click="editarCliente(rowCliente)">
+   		    <td>
+   		    	<div class="text-center">
+			  		<a ng-href="#" ng-click="editarCliente(rowCliente)" title="Editar Registro">
+			  			<span class="icon-edit"></span>
+			  		</a>&nbsp;
+			  		<a ng-href="#" ng-click="borrarCliente($event, rowCliente)" title="Eliminar Registro">
+			  			<span class="icon-delete"></span>
+			  		</a>
+		  		</div>
+			</td>
+
+			<td ng-switch on="rowCliente.tipoDcto">
+				<span ng-switch-when="CC">Cedula de Ciudadanía</span>
+				<span ng-switch-when="TI">Tarjeta de Identidad</span>
+			</td>
+			<td>{{rowCliente.nroDcto}}</td>
+			<td>{{rowCliente.nombre}}</td>
+			<td>{{rowCliente.apellido}}</td>
+			<td>{{rowCliente.direccion}}</td>
+			<td>{{rowCliente.telefono}}</td>
+			<td>{{rowCliente.celular}}</td>
+		</tr>
+	</tbody>
+</table>

@@ -45,8 +45,7 @@ public class CiudadRepositoryImpl extends AbstractRepository<CiudadEntity> imple
 	public Collection<CiudadEntity> findByName(String query) {
 
 		return getEm().createQuery("select ciu from CiudadEntity ciu Where LOWER(ciu.nombre) like :query",
-						CiudadEntity.class).setParameter("query", query.toLowerCase()
-						+ "%").getResultList();
+					   CiudadEntity.class).setParameter("query", query.toLowerCase() + "%").getResultList();
 	}
 
 

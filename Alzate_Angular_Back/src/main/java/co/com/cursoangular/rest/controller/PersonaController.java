@@ -33,7 +33,7 @@ public class PersonaController {
 
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/find")
-	public ResponseEntity<PersonaRest> find(@RequestBody Long id) {
+	public ResponseEntity<PersonaRest> find(@RequestBody Integer id) {
 
 		PersonaRest persona = PersonaAdapter.toRest(personaBusiness.find(id));
 

@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Long cdPersona;
+	private Integer cdPersona;
 	private Date feProceso;
 	private Date feModifica;
 	private String strNombres;
@@ -46,15 +46,15 @@ public class Persona implements Serializable {
 	public Persona() {
 	}
 
-	public Persona(Long cdPersona) {
+	public Persona(Integer cdPersona) {
 		this.cdPersona = cdPersona;
 	}
 
-	public Long getCdPersona() {
+	public Integer getCdPersona() {
 		return cdPersona;
 	}
 
-	public void setCdPersona(Long cdPersona) {
+	public void setCdPersona(Integer cdPersona) {
 		this.cdPersona = cdPersona;
 	}
 

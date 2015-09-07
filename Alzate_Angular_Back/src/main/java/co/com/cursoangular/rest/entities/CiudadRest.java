@@ -1,9 +1,8 @@
 package co.com.cursoangular.rest.entities;
 
+
 import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)

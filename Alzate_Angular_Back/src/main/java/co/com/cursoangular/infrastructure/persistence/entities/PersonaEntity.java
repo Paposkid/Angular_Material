@@ -5,8 +5,6 @@
  */
 package co.com.cursoangular.infrastructure.persistence.entities;
 
-import static org.eclipse.persistence.annotations.MultitenantType.TABLE_PER_TENANT;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -25,9 +23,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.eclipse.persistence.annotations.BatchFetch;
 import org.eclipse.persistence.annotations.BatchFetchType;
-import org.eclipse.persistence.annotations.Multitenant;
-import org.eclipse.persistence.annotations.TenantTableDiscriminator;
-import org.eclipse.persistence.annotations.TenantTableDiscriminatorType;
 
 
 @Entity
